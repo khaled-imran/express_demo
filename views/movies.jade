@@ -1,0 +1,8 @@
+h2.pull-right.green #[a(href='movies/new') Add new movie]
+
+
+table.table.table-striped
+	for movie in movies
+		tr
+			td #[a(href="movies/#{movie.id}") #{movie.title}]
+			td #[a(href="movies/edit/#{movie.id}") Edit]

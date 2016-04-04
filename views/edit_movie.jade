@@ -1,0 +1,10 @@
+form(action="/movies/update/#{form_info.id}", method="post")
+	div.form-group
+		label(for='title') Title
+		input(type='text', name= 'title', class='form-control', value="#{form_info.title}")
+	div.form-group
+		label(for='URL') Trailer Title
+		input(type='text', name='url', class='form-control', value="#{form_info.url}")
+	div.form-group
+		input(type="submit", value="Submit", class='btn btn-default')
+	br

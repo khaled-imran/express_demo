@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.green a {
+	color: green;
+}
+
+.top_head {
+	background-color: #5F4586;
+	color: #fff;
+	padding: 10px;
+}
+
+p.lead {
+	color: #5F4586;
+}
