@@ -18,3 +18,21 @@ html(lang='en')
         p.lead
           | Trailers
         != body
+    div(style='position: absolute;z-index: 100; display: inline-block;overflow: hidden; bottom: 0; right: 0; width 100px; height: 300px; border: 1px solid blue; background-color: white;')
+      div#messages(style='display: inline-block; width: 100%; height: 200px; overflow: scroll;')    
+      form.chat_form
+        input#text(name='text', type='text', style='width: 100%; height: 72px')
+        input#subm(name='subm', type='submit')    
+    script(src='/socket.io/socket.io.js')
+    script(src="http://code.jquery.com/jquery-1.11.1.js")
+    script.
+      var socket = io();  
+      $('.chat_form').submit(function(){
+        socket.emit('chat message', $('#text').val());
+        $('#text').val('');
+        return false;
+      });
+      socket.on('chat message', function(msg){
+        console.log(msg);
+        $('#messages').append($('<li>').text(msg));
+      });

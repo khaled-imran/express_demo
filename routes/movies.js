@@ -24,7 +24,10 @@ router.get('/', function(req, res, next) {
 
 router.get('/new', function(req, res, next) {
 	
-  res.render('new_movie.jade');	
+  res.render('new_movie.jade', {
+    isAuthenticated: req.isAuthenticated(),
+    user: req.user
+  });	
   
 
 });

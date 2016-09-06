@@ -1,5 +1,11 @@
 extends layout
 
+if isAuthenticated == true
+  p user.username
+
+
 block content
   h1= title
   p Welcome to #{title}
+
+  

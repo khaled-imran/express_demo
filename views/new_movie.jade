@@ -1,3 +1,9 @@
+if isAuthenticated
+	p=user.name
+	a(href='/logout') Logout
+else
+	a(href='/login') Login  
+
 form(action="/movies/create", method="post")
 	div.form-group
 		label(for='title') Title
